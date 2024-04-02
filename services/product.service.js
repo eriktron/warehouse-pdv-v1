@@ -1,13 +1,14 @@
 const { faker } = require('@faker-js/faker');
 const boom = require('@hapi/boom');
 
-const sequelize = require ('../libs/sequelize');
+//const sequelize = require ('../libs/sequelize');
+const { models } = require ('./../libs/sequelize');
 
 class ProductsService {
 
   constructor(){
-    this.products = [];
-    this.generate();
+      //this.products = [];
+      //this.generate();
     //this.pool = pool;
     //this.pool.on('error', (err)=> console.error(err));
   }
@@ -35,11 +36,14 @@ class ProductsService {
   }
 
   async find() {
-    const query = 'SELECT * FROM tasks';
+      //const query = 'SELECT * FROM tasks';
     //const rta = await this.pool.query(query);
-    const [data] = await sequelize.query(query);
+      //const [data] = await sequelize.query(query);
     //return rta.rows;
-    return data;
+      //return data;
+
+      const rta = await models.Product.findAll();
+      return rta;
   }
 
   async findOne(id) {
