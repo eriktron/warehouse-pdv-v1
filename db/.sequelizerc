@@ -1,0 +1,29 @@
+const path = require('path');
+
+module.exports = {
+  config: path.resolve(".", "api", "db", "config.js"),
+  "models-path": path.resolve(".", "api", "db", "models"),
+  "migrations-path": path.resolve(".", "api", "db", "migrations"),
+  "seeders-path": path.resolve(".", "api", "db", "seeders"),
+};
+/**
+ * 
+ * module.exports = {
+•	  'config': './db/config.js',
+•	  'models-path': './db/models/',
+•	  'migrations-path': './db/migrations/',
+•	  'seeders-path': './db/seeders/',
+•	}
+
+otro
+
+var path = require("path");
+
+module.exports = {
+  config: path.resolve(".", "dist", "db", "config.js"),
+  "models-path": path.resolve(".", "dist", "db", "models"),
+  "migrations-path": path.resolve(".", "dist", "db", "migrations"),
+  "seeders-path": path.resolve(".", "dist", "db", "seeders"),
+};
+
+ */

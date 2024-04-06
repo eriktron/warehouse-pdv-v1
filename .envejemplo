@@ -1,6 +1,20 @@
+usar para mysql
 PORT=3000
 DB_USER='root'
 DB_PASSWORD='admin1234'
 DB_HOST='localhost'
 DB_NAME='my_store'
 DB_PORT='3306'
+
+usar para postgres
+PORT=3000
+DB_USER='erik'
+DB_PASSWORD='admin1234'
+DB_HOST='localhost'
+DB_NAME='my_store'
+DB_PORT='5432'
+
+no olvidar cambiar en sequelize el nombre de postgres o mysql
+
+
+
