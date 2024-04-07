@@ -15,7 +15,7 @@ const sequelize = new Sequelize(URI, {
 
 setupModels(sequelize);
 
-sequelize.sync();
+//sequelize.sync(); quitamos esto para evitar que sincronice
 
 module.exports = sequelize;
 
