@@ -1,10 +1,10 @@
 const express = require('express');
 
-const CustomerService = require('./../services/customer.service');
+const CustomerService = require('../services/customer.service');
 const validatorHandler = require('./../middlewares/validator.handler');
-const { 
+const {
     updateCustomerSchema,
-    createCustomerSchema, 
+    createCustomerSchema,
     getCustomerSchema
 } = require('./../schemas/customer.schema');  //aqui c16 pendie 3:54
 
