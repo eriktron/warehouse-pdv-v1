@@ -6,13 +6,13 @@ const CUSTOMER_TABLE = 'customers';
 
 const CustomerSchema = {
     id: {
-        allowNull: false, 
+        allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER
     },
     name: {
-        allowNull: false, 
+        allowNull: false,
         type: DataTypes.STRING,
     },
     lastName: {
@@ -21,11 +21,11 @@ const CustomerSchema = {
         field: 'last_name',
     },
     phone: {
-        allowNull: true, 
-        type: DataTypes.STRING, 
-    },    
-    createdAt: { 
-        allowNull: false, 
+        allowNull: true,
+        type: DataTypes.STRING,
+    },
+    createdAt: {
+        allowNull: false,
         type: DataTypes.DATE,
         field: 'create_at',
         defaultValue: Sequelize.NOW
@@ -34,6 +34,7 @@ const CustomerSchema = {
         field: 'user_id',
         allowNull: false,
         type: DataTypes.INTEGER,
+        unique: true,
         references:{
             model: USER_TABLE,
             key: 'id'
@@ -41,21 +42,21 @@ const CustomerSchema = {
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL'
     }
-       
+
 }
 
 class Customer extends Model {
-    static associate(models){          
-        this.belongsTo(models.User, { as: 'user'} )  //aqui definimos la relación                    
-    }                           
+    static associate(models){
+        this.belongsTo(models.User, { as: 'user'} )  //aqui definimos la relación
+    }
 
-    static config(sequelize){   
+    static config(sequelize){
         return{
-            sequelize,          
-            tableName: CUSTOMER_TABLE, 
-            modelName: 'Customer',      
-            timestamps: false      
-                                    
+            sequelize,
+            tableName: CUSTOMER_TABLE,
+            modelName: 'Customer',
+            timestamps: false
+
         }
     }
 }

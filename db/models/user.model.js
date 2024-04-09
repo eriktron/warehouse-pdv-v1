@@ -10,21 +10,21 @@ const UserSchema = {
         type: DataTypes.INTEGER //tipo entero
     },
     email: {
-        allowNull: false, 
+        allowNull: false,
         type: DataTypes.STRING, //que es string
         unique: true, //que es un campo unico
     },
     password: {
         allowNull: false,
-        type: DataTypes.STRING 
+        type: DataTypes.STRING
     },
     role: {
-        allowNull: false, 
-        type: DataTypes.STRING, 
+        allowNull: false,
+        type: DataTypes.STRING,
         defaultValue: 'customer'
-    },    
+    },
     createdAt: { //aqui como lo manejaremos en javascript
-        allowNull: false, 
+        allowNull: false,
         type: DataTypes.DATE,
         field: 'create_at', //aqui como quedara en la base de datos
         defaultValue: Sequelize.NOW
@@ -33,9 +33,12 @@ const UserSchema = {
 
 //definimos una clase con nuestro modelo y extiende de MODEL
 class User extends Model {
-    static associate(){         //metodo estatico, quiere decir que no 
-        //                      //necesito una declaracion para usar
-    }                           //estos metodos
+    static associate(models){
+        this.hasOne(models.Customer, {
+          as: 'customer',
+          foreignKey: 'userId'
+        })
+    }
 
     static config(sequelize){   //creamos un estatico para la conexion
         return{
