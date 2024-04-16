@@ -12,11 +12,15 @@ class CategoryService {
   }
 
   async find() {
-    return [];
+    const rta = await models.Category.findAll();
+    return rta
   }
 
   async findOne(id) {
-    return { id };
+    const rta = await models.Category.findByPk(id, {
+      include: ['products']
+    });
+    return rta;
   }
 
   async update(id, changes) {

@@ -35,7 +35,7 @@ const ProductSchema = {
         defaultValue: Sequelize.NOW
     },
     categoryId:{
-      field: 'category_id',
+      field: 'categoryId',
       allowNull: false,
       type: DataTypes.INTEGER,
       //unique: , se quita el campo unique ya que necesitamos que haya muchos productos
