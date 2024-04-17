@@ -2,7 +2,8 @@ version: '3.3'
 
 services:
   postgres:
-    image: postgres:13
+    # image: postgres:13
+    image: eriktron/postgres3:latest
     environment:
       - POSTGRES_DB=my_store
       - POSTGRES_USER=erik
@@ -13,7 +14,8 @@ services:
       - ./postgres_data:/var/lib/postgresql/data
 
   pgadmin:
-    image: dpage/pgadmin4
+    # image: dpage/pgadmin4
+    image: eriktron/pgadmin5
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@mail.com
       - PGADMIN_DEFAULT_PASSWORD=root
