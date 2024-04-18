@@ -15,13 +15,19 @@ class OrderService {
   async find() {
     return [];
   }
-
+//Aqui extendiendo el anidamiento:
   async findOne(id) {
     const rta = await models.Order.findByPk(id, {
-      include: ['customer']
+      include:[
+        {
+          association: 'customer',
+          include: ['user']
+        }
+      ]
     });
     return rta;
   }
+
 
   async update(id, changes) {
     return {

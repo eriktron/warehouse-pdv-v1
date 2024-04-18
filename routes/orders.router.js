@@ -11,7 +11,7 @@ const router = express.Router();
 const service = new OrderService();
 
 router.get(
-  '/',
+  '/:id',
   validatorHandler(getOrderSchema, 'params'),
   async (req, res, next) => {
   try {
