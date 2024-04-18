@@ -7,8 +7,13 @@ class OrderService {
   constructor(){
   }
 
-  async create(data) {
+  async create(data) { //este create es la creacion de una orden de compra
     const rta = await models.Order.create(data);
+    return rta;
+  }
+  //creamos nueva funcion para crear item
+  async addItem(data) {
+    const rta = await models.OrderProduct.create(data);
     return rta;
   }
 
@@ -22,7 +27,8 @@ class OrderService {
         {
           association: 'customer',
           include: ['user']
-        }
+        },
+        'items'
       ]
     });
     return rta;
