@@ -3,7 +3,7 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const {CUSTOMER_TABLE} = require('./customer.model');
 const {PRODUCT_TABLE} = require('./product.model');
-const {ORDER_PRODUCT_TABLE} = require('./orderproduct.model');
+//const {ORDER_PRODUCT_TABLE} = require('./orderproduct.model');
 
 const ORDER_TABLE = 'orders';
 
@@ -28,18 +28,18 @@ const OrderSchema = {
       model: CUSTOMER_TABLE,
       key: 'id'
     }
-  },
-  total:{
-    type:DataTypes.VIRTUAL,
-    get(){
-      if(this.items.length > 0){
-        return this.items.reduce((total, item) => {
-          return total + (item.price * item.OrderProduct.amount);
-        }, 0);
-      }
-      return 0;
-    }
   }
+  // total:{
+  //   type:DataTypes.VIRTUAL,
+  //   get(){
+  //     if(this.items.length > 0){
+  //       return this.items.reduce((total, item) => {
+  //         return total + (item.price * item.OrderProduct.amount);
+  //       }, 0);
+  //     }
+  //     return 0;
+  //   }
+  // }
 }
 
 class Order extends Model {
@@ -66,4 +66,4 @@ class Order extends Model {
   }
 }
 
-module.exports = { Order, OrderSchema, ORDER_TABLE};
+module.exports = { ORDER_TABLE , OrderSchema, Order};
