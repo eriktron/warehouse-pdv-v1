@@ -4,8 +4,8 @@ services:
   postgres:
     image: postgres:13
     environment:
-      - POSTGRES_DB=my_store
-      - POSTGRES_USER=erik
+      - POSTGRES_DB=warehouse1
+      - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin1234
     ports:
       - 5432:5432
@@ -15,7 +15,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_EMAIL=mail@mail.com
       - PGADMIN_DEFAULT_PASSWORD=root
     ports:
       - 5050:80

@@ -1,5 +1,5 @@
 # my-store
-Realizando proyecto de Platzi
+Desarrollo inicial y nuevo de un sistema de almacen con punto de venta
 
 Para la instalación localmente 
   1.- Copia del proyecto (En consola ubicarnos donde estara ubicado el proyecto)
