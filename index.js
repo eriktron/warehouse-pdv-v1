@@ -38,5 +38,5 @@ app.use(errorHandler);
 
 
 app.listen(port, () => {
-  console.log('Mi puerto warehouse-pdv-copi1' +  port);
+  console.log('Mi puerto warehouse-pdv-copi1 es el ' +  port);
 });
