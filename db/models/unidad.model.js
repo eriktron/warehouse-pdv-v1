@@ -29,7 +29,10 @@ const UnidadSchema = {
 
 class Unidad extends Model {
   static associate(models){
-    //
+    this.hasMany(models.Producto, {
+      as: 'T_Producto',
+      foreignKey: 'unidad_id'
+    })
   }
 
   static config(sequelize){

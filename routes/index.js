@@ -11,6 +11,7 @@ const unidadRouter = require('./unidad.router');
 const estadoRouter = require('./estado.router');
 const clienteRouter = require('./cliente.router');
 const rolRouter = require('./rol.router');
+const productoRouter = require('./producto.router');
 
 
 function routerApi(app) {
@@ -27,6 +28,7 @@ function routerApi(app) {
   router.use('/estado', estadoRouter);
   router.use('/cliente', clienteRouter);
   router.use('/rol', rolRouter);
+  router.use('/producto', productoRouter);
 }
 
 module.exports = routerApi;

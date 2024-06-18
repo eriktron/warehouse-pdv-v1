@@ -29,7 +29,10 @@ const ProveedorSchema = {
 
 class Proveedor extends Model {
   static associate(models){
-    //
+    this.hasMany(models.Producto, {
+      as: 'T_Producto',
+      foreignKey: 'proveedor_id'
+    })
   }
 
   static config(sequelize){
