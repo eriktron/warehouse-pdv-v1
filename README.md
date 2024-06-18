@@ -18,3 +18,8 @@ Para la instalación localmente
   7.- Corremos el proyecto.
       $ npm run dev
 
+Otros:
+  Crear Migraciones
+  1.- $ npm run migrations:generate "un nombre"
+  Correr la migración
+  1.- $ npm run migrations:run
