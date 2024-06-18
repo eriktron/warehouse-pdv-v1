@@ -5,16 +5,17 @@
 // const { Order, OrderSchema} = require('./order.model');
 // const { OrderProduct, OrderProductSchema} = require('./orderproduct.model');
 const { Categoria, CategoriaSchema } = require('./categoria.model');
+const { Proveedor, ProveedorSchema} = require ('./proveedor.model');
 
 function setupModels(sequelize){
-       Categoria.init(CategoriaSchema, Categoria.config(sequelize));
     // User.init(UserSchema, User.config(sequelize));  //aqui iniciamos
     // Customer.init(CustomerSchema, Customer.config(sequelize));
     // Category.init(CategorySchema, Category.config(sequelize));
     // Product.init(ProductSchema, Product.config(sequelize));
     // Order.init(OrderSchema, Order.config(sequelize));
     // OrderProduct.init(OrderProductSchema, OrderProduct.config(sequelize));
-
+    Categoria.init(CategoriaSchema, Categoria.config(sequelize));
+    Proveedor.init(ProveedorSchema, Proveedor.config(sequelize));
 
     // User.associate(sequelize.models); //aqui hacemos la incialización de las relaciones
     // Customer.associate(sequelize.models);
