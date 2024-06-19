@@ -1,7 +1,7 @@
 const { allow } = require('joi');
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const CATEGORIA_TABLA = 'categorias';
+const CATEGORIA_TABLA = 'T_Categoria';
 
 const CategoriaSchema = {
   id: {
@@ -18,15 +18,16 @@ const CategoriaSchema = {
   descripcion: {
     type: DataTypes.TEXT,
     allowNull: true,
-
   }
 }
 
 class Categoria extends Model {
+
   static associate(models){
-    this.hasMany(models.Producto, {
-      as: 'T_Producto',
+    //asociacion uno a muchos Categoria(1)--(*)Producto
+    Categoria.hasMany(models.Producto, {
       foreignKey: 'categoria_id'
+      // as: 'produ' //se le da un nombre, funciono tb quitandole
     })
   }
 

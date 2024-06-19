@@ -99,11 +99,13 @@ const ProductoSchema = {
 }
 
 class Producto extends Model {
+
   static associate(models){
-    this.belongsTo(models.Categoria, {as: 'categorias'});
-    this.belongsTo(models.Proveedor, {as: 'T_Proveedor'});
-    this.belongsTo(models.Unidad, {as: 'T_Unidad'});
-    this.belongsTo(models.Estado, {as: 'T_Estado'});
+    //asociacion uno a muchos Categoria(1)--(*)Producto
+    Producto.belongsTo(models.Categoria, {
+      foreignKey: 'categoria_id'
+      // as: 'categ' ////se le da un nombre, funciono tb quitandole
+    });
   }
 
   static config(sequelize){

@@ -2,10 +2,10 @@ const Joi = require('joi');
 
 const id = Joi.number().integer();
 const nombre = Joi.string().min(1).max(15);
-const codigo = Joi.string().min(10);
+const codigo = Joi.string().min(1);
 const cantidad = Joi.number().integer();
 const precioVenta = Joi.number().integer();
-const marca = Joi.string().min(20);
+const marca = Joi.string().min(1);
 const categoria_id = Joi.number().integer();
 const proveedor_id = Joi.number().integer();
 const unidad_id = Joi.number().integer();
