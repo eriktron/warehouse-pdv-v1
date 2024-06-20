@@ -121,6 +121,11 @@ class Producto extends Model {
       foreignKey: 'estado_id',
       as: 'rprodesta'
     });
+    //asociacion uno a uno Producto(1) - Stock(1)
+    Producto.hasOne(models.Stock, {
+      foreignKey: 'producto_id',
+      as: 'rprodstoc'
+    })
   }
 
   static config(sequelize){
