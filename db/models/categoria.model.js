@@ -26,7 +26,8 @@ class Categoria extends Model {
   static associate(models){
     //asociacion uno a muchos Categoria(1)--(*)Producto
     Categoria.hasMany(models.Producto, {
-      foreignKey: 'categoria_id'
+      foreignKey: 'categoria_id',
+      as: 'rascateprod'
       // as: 'produ' //se le da un nombre, funciono tb quitandole
     })
   }

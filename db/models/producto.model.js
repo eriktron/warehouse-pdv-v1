@@ -103,8 +103,8 @@ class Producto extends Model {
   static associate(models){
     //asociacion uno a muchos Categoria(1)--(*)Producto
     Producto.belongsTo(models.Categoria, {
-      foreignKey: 'categoria_id'
-      // as: 'categ' ////se le da un nombre, funciono tb quitandole
+      foreignKey: 'categoria_id',
+      as: 'rasprodcate' ////se le da un nombre, funciono tb quitandole
     });
   }
 

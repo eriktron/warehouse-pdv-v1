@@ -17,7 +17,9 @@ class CategoriaService {
   }
 
   async findOne(id) {
-    const rta = await models.Categoria.findByPk(id);
+    const rta = await models.Categoria.findByPk(id,{
+      include: ['rascateprod']
+    });
     return rta;
   }
 

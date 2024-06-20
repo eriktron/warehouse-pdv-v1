@@ -24,15 +24,15 @@ const createProductoSchema = Joi.object({
 });
 
 const updateProductoSchema = Joi.object({
-  nombre: nombre.required(),
+  nombre: nombre,
   codigo: codigo,
   cantidad: cantidad,
   precioVenta: precioVenta,
   marca: marca,
-  categoria_id: categoria_id.required(),
+  categoria_id: categoria_id,
   proveedor_id: proveedor_id,
   unidad_id: unidad_id,
-  estado_id: estado_id.required()
+  estado_id: estado_id
 });
 
 const getProductoSchema = Joi.object({
