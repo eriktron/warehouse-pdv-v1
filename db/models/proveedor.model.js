@@ -29,9 +29,10 @@ const ProveedorSchema = {
 
 class Proveedor extends Model {
   static associate(models){
-    this.hasMany(models.Producto, {
-      as: 'T_Producto',
-      foreignKey: 'proveedor_id'
+    //asociacion uno a muchos Proveedor(1)--(*)Producto
+    Proveedor.hasMany(models.Producto, {
+      foreignKey: 'proveedor_id',
+      as: 'rprovprod'
     })
   }
 
@@ -39,7 +40,7 @@ class Proveedor extends Model {
       return{
           sequelize,
           tableName: PROVEEDOR_TABLA,
-          modelName: 'Proveedor',  //es la forma de ingresar  a su modelo
+          modelName: 'Proveedor',
           timestamps: false
 
       }

@@ -29,9 +29,10 @@ const EstadoSchema = {
 
 class Estado extends Model {
   static associate(models){
-    this.hasMany(models.Producto, {
-      as: 'T_Producto',
-      foreignKey: 'estado_id'
+    //asociacion uno a muchos Estado(1)--(*)Producto
+    Estado.hasMany(models.Producto, {
+      foreignKey: 'estado_id',
+      as: 'restaprod'
     })
   }
 

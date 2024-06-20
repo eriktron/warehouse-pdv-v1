@@ -15,8 +15,8 @@ function setupModels(sequelize){
     Rol.init(RolSchema, Rol.config(sequelize));
     Producto.init(ProductoSchema, Producto.config(sequelize));
 
-    Categoria.associate(sequelize.models);
     Producto.associate(sequelize.models); //aqui hacemos la incialización de las relaciones
+    Categoria.associate(sequelize.models);
     Proveedor.associate(sequelize.models);
     Unidad.associate(sequelize.models);
     Estado.associate(sequelize.models);

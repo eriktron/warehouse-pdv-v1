@@ -18,7 +18,9 @@ class UnidadService {
   }
 
   async findOne(id) {
-    const rta = await models.Unidad.findByPk(id);
+    const rta = await models.Unidad.findByPk(id,{
+      include: ['runidprod']
+    });
     return rta;
   }
 

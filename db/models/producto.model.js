@@ -104,7 +104,22 @@ class Producto extends Model {
     //asociacion uno a muchos Categoria(1)--(*)Producto
     Producto.belongsTo(models.Categoria, {
       foreignKey: 'categoria_id',
-      as: 'rasprodcate' ////se le da un nombre, funciono tb quitandole
+      as: 'rprodcate' ////se le da un nombre, funciono tb quitandole
+    });
+
+    Producto.belongsTo(models.Proveedor, {
+      foreignKey: 'proveedor_id',
+      as: 'rprodprov'
+    });
+
+    Producto.belongsTo(models.Unidad, {
+      foreignKey: 'unidad_id',
+      as: 'rprodunid'
+    });
+
+    Producto.belongsTo(models.Estado, {
+      foreignKey: 'estado_id',
+      as: 'rprodesta'
     });
   }
 

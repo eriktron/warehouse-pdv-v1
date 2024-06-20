@@ -18,7 +18,9 @@ class ProveedorService {
   }
 
   async findOne(id) {
-    const rta = await models.Proveedor.findByPk(id);
+    const rta = await models.Proveedor.findByPk(id, {
+      include: ['rprovprod']
+    });
     return rta;
   }
 

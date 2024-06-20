@@ -18,7 +18,9 @@ class EstadoService {
   }
 
   async findOne(id) {
-    const rta = await models.Estado.findByPk(id);
+    const rta = await models.Estado.findByPk(id, {
+      include: ['restaprod']
+    });
     return rta;
   }
 

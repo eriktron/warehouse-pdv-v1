@@ -14,7 +14,8 @@ class ProductoService {
 
   async find() {
     const rta = await models.Producto.findAll({
-      include: ['rasprodcate']
+      include: ['rprodcate', 'rprodprov', 'rprodesta', 'rprodunid']
+
     });
     return rta
   }
