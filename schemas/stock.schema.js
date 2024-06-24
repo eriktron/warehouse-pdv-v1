@@ -8,7 +8,6 @@ const createStockSchema = Joi.object({
   cantidad: cantidad,
   producto_id: producto_id.required()
 });
-console.log(createStockSchema);
 
 const updateStockSchema = Joi.object({
   cantidad: cantidad
