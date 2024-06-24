@@ -19,8 +19,9 @@ const StockSchema = {
   },
   producto_id: {
     type: DataTypes.INTEGER,
-    allowNull: true,
+    allowNull: false,
     field: 'producto_id',
+    unique: true,
     references:{
       model: PRODUCTO_TABLA,
       key: 'id'

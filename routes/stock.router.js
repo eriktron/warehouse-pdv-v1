@@ -6,7 +6,7 @@ const {
       createStockSchema,
       updateStockSchema,
       getStockSchema
-} = require('./../schemas/estado.schema');
+} = require('./../schemas/stock.schema');
 
 const router = express.Router();
 const service = new StockService();
