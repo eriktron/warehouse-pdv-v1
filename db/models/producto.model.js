@@ -125,7 +125,12 @@ class Producto extends Model {
     Producto.hasOne(models.Stock, {
       foreignKey: 'producto_id',
       as: 'rprodstoc'
-    })
+    });
+    //asociacion uno a muchos donde uno es producto y muchos es transaccion
+    this.hasMany(models.Transaccion, {
+      foreignKey: 'producto_id',
+      as: 'rprodtran'
+    });
   }
 
   static config(sequelize){

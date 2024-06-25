@@ -6,6 +6,7 @@ const { Cliente, ClienteSchema} = require('./cliente.model');
 const { Rol, RolSchema} = require('./rol.model');
 const { Producto, ProductoSchema} = require('./producto.model');
 const { Stock, StockSchema} = require('./stock.model');
+const { Transaccion, TransaccionSchema} = require('./transaccion.model');
 
 function setupModels(sequelize){
     Categoria.init(CategoriaSchema, Categoria.config(sequelize)); //aqui iniciamos
@@ -16,6 +17,7 @@ function setupModels(sequelize){
     Rol.init(RolSchema, Rol.config(sequelize));
     Producto.init(ProductoSchema, Producto.config(sequelize));
     Stock.init(StockSchema, Stock.config(sequelize));
+    Transaccion.init(TransaccionSchema, Transaccion.config(sequelize));
 
     Producto.associate(sequelize.models); //aqui hacemos la incialización de las relaciones
     Categoria.associate(sequelize.models);
@@ -23,6 +25,7 @@ function setupModels(sequelize){
     Unidad.associate(sequelize.models);
     Estado.associate(sequelize.models);
     Stock.associate(sequelize.models);
+    Transaccion.associate(sequelize.models);
 
 }
 

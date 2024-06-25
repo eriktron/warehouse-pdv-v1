@@ -2,25 +2,23 @@ const boom = require('@hapi/boom');
 
 const {models} = require('./../libs/sequelize');
 
-class StockService {
+class TransaccionService {
 
   constructor(){
     //
   }
   async create(data) {
-    const rta = await models.Stock.create(data);
+    const rta = await models.Transaccion.create(data);
     return rta;
   }
 
   async find() {
-    const rta = await models.Stock.findAll({
-      include:['rstocprod']
-    });
+    const rta = await models.Transaccion.findAll();
     return rta
   }
 
   async findOne(id) {
-    const rta = await models.Stock.findByPk(id,);
+    const rta = await models.Transaccion.findByPk(id,);
     return rta;
   }
 
@@ -37,4 +35,4 @@ class StockService {
   }
 }
 
-module.exports = StockService;
+module.exports = TransaccionService;
