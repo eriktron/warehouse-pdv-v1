@@ -1,10 +1,13 @@
 const Joi = require('joi');
 
+const maxDecimalValue = 999999.99;
+const minDecimalValue = -999999.99;
+
 const id = Joi.number().integer();
-const nombre = Joi.string().min(1).max(15);
+const nombre = Joi.string().min(1);
 const codigo = Joi.string().min(1);
 const cantidad = Joi.number().integer();
-const precioVenta = Joi.number().integer();
+const precioVenta = Joi.number().precision(2).max(maxDecimalValue).min(minDecimalValue)
 const marca = Joi.string().min(1);
 const categoria_id = Joi.number().integer();
 const proveedor_id = Joi.number().integer();

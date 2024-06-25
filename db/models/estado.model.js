@@ -33,7 +33,13 @@ class Estado extends Model {
     Estado.hasMany(models.Producto, {
       foreignKey: 'estado_id',
       as: 'restaprod'
-    })
+    });
+
+    //relacion uno a muchos donde estado es (1)
+    this.hasMany(models.Usuario, {
+      foreignKey: 'estado_id',
+      as: 'restausua'
+    });
   }
 
   static config(sequelize){
