@@ -66,6 +66,12 @@ class Usuario extends Model {
       foreignKey: 'estado_id',
       as: 'rusuaesta'
     });
+
+    // relacion uno a muchos usuario es (1) venta(*)
+    Usuario.hasMany(models.Venta, {
+      foreignKey: 'usuario_id',
+      as: 'rusuavent'
+    });
   }
 
   static config(sequelize){

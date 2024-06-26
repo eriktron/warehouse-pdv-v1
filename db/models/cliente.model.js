@@ -29,7 +29,11 @@ const ClienteSchema = {
 
 class Cliente extends Model {
   static associate(models){
-    //
+    // relacion uno a muchos cliente es (1) venta(*)
+    Cliente.hasMany(models.Venta, {
+      foreignKey: 'cliente_id',
+      as: 'rclievent'
+    });
   }
 
   static config(sequelize){

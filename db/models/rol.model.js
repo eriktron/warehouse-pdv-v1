@@ -30,7 +30,7 @@ const RolSchema = {
 class Rol extends Model {
   static associate(models){
     //relacion uno a muchos donde Rol es (1)
-    this.hasMany(models.Usuario, {
+    Rol.hasMany(models.Usuario, {
       foreignKey: 'rol_id',
       as: 'rrolusua'
     });
