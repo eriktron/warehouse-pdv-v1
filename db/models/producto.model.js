@@ -127,9 +127,17 @@ class Producto extends Model {
       as: 'rprodstoc'
     });
     //asociacion uno a muchos donde uno es producto y muchos es transaccion
-    this.hasMany(models.Transaccion, {
+    Producto.hasMany(models.Transaccion, {
       foreignKey: 'producto_id',
       as: 'rprodtran'
+    });
+
+    //relacion mucho a muchos con venta intermedio detalleventa
+    Producto.belongsToMany(models.Venta, {
+      through: models.Detalleventa,
+      foreignKey: 'producto_id',
+      // otherKey: 'productId'
+      as: 'rprodvent',
     });
   }
 

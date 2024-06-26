@@ -61,6 +61,14 @@ class Venta extends Model {
       as: 'rventusua'
     });
 
+    //relacion mucho a muchos con venta intermedio detalleventa
+    Venta.belongsToMany(models.Producto, {
+      through: models.Detalleventa,
+      foreignKey: 'venta_id',
+      // otherKey: 'productId'
+      as: 'rventprod',
+    });
+
   }
 
   static config(sequelize){
