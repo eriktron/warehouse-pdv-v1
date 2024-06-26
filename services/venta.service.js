@@ -18,7 +18,9 @@ class VentaService {
   }
 
   async findOne(id) {
-    const rta = await models.Venta.findByPk(id,);
+    const rta = await models.Venta.findByPk(id, {
+      include: 'rmtmventprod'
+    });
     return rta;
   }
 
@@ -33,6 +35,14 @@ class VentaService {
     await model.destroy();
     return { rta: true };
   }
+
+  //esta funcion trabaja para crear en T_Detallevetna
+  async addItem(data) {
+    const rta = await models.Detalleventa.create(data);
+    return rta;
+  }
+
+
 }
 
 module.exports = VentaService;

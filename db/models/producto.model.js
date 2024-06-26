@@ -1,10 +1,12 @@
 const { allow } = require('joi');
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const {CATEGORIA_TABLA} = require('./categoria.model')
-const {PROVEEDOR_TABLA} = require('./proveedor.model')
-const {UNIDAD_TABLA} = require('./unidad.model')
-const {ESTADO_TABLA} = require('./estado.model')
+const {CATEGORIA_TABLA} = require('./categoria.model');
+const {PROVEEDOR_TABLA} = require('./proveedor.model');
+const {UNIDAD_TABLA} = require('./unidad.model');
+const {ESTADO_TABLA} = require('./estado.model');
+// const {DETALLEVENTA_TABLA} = require('./detalleventa.model');
+
 
 const PRODUCTO_TABLA = 'T_Producto';
 
@@ -133,19 +135,21 @@ class Producto extends Model {
     });
 
     //relacion mucho a muchos con venta intermedio detalleventa
-    Producto.belongsToMany(models.Venta, {
-      through: models.Detalleventa,
-      foreignKey: 'producto_id',
-      // otherKey: 'productId'
-      as: 'rprodvent',
-    });
+    // Producto.belongsToMany(models.Venta, {
+    //   through: models.Detalleventa,
+    //   foreignKey: 'producto_id',
+    //   otherKey: 'venta_id',
+    //   as: 'rprodvent',
+    // });
+
+    // Producto.belongsToMany(models.Venta, { through: models.Detalleventa });
   }
 
   static config(sequelize){
       return{
           sequelize,
           tableName: PRODUCTO_TABLA,
-          modelName: 'Producto',  //es la forma de ingresar  a su modelo
+          modelName: 'Producto',
           timestamps: false
 
       }

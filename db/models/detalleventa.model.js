@@ -58,7 +58,7 @@ class Detalleventa extends Model {
       return{
           sequelize,
           tableName: DETALLEVENTA_TABLA,
-          modelName: 'Detalleventa',  //es la forma de ingresar  a su modelo
+          modelName: 'Detalleventa',
           timestamps: false
 
       }

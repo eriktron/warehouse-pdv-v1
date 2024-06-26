@@ -5,7 +5,8 @@ const validatorHandler = require('./../middlewares/validator.handler');
 const {
       createVentaSchema,
       updateVentaSchema,
-      getVentaSchema
+      getVentaSchema,
+      addItemSchema
 } = require('./../schemas/venta.schema');
 
 const router = express.Router();
@@ -38,6 +39,20 @@ router.post('/',
     try {
       const body = req.body;
       const newRta = await service.create(body);
+      res.status(201).json(newRta);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+//se agrega esta funcion para que agregue a T_Detalleventa
+router.post('/add-item',
+  validatorHandler(addItemSchema, 'body'),
+  async (req, res, next) => {
+    try {
+      const body = req.body;
+      const newRta = await service.addItem(body);
       res.status(201).json(newRta);
     } catch (error) {
       next(error);

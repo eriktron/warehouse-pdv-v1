@@ -3,6 +3,7 @@ const { Model, DataTypes, Sequelize } = require('sequelize');
 
 const {CLIENTE_TABLA} = require('./cliente.model');
 const {USUARIO_TABLA} = require('./usuario.model');
+// const {PRODUCTO_TABLA} = require('./producto.model');
 
 const VENTA_TABLA = 'T_Venta';
 
@@ -65,17 +66,16 @@ class Venta extends Model {
     Venta.belongsToMany(models.Producto, {
       through: models.Detalleventa,
       foreignKey: 'venta_id',
-      // otherKey: 'productId'
-      as: 'rventprod',
+      otherKey: 'producto_id',
+      as: 'rmtmventprod',
     });
-
   }
 
   static config(sequelize){
       return{
           sequelize,
           tableName: VENTA_TABLA,
-          modelName: 'Venta',  //es la forma de ingresar  a su modelo
+          modelName: 'Venta',
           timestamps: false
 
       }
