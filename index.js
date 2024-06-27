@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-const whitelist = ['http://localhost:8080', 'https://myapp.co'];
+const whitelist = ['http://localhost:8080', 'https://myapp.co', 'http://localhost:5173'];
 const options = {
   origin: (origin, callback) => {
     if (whitelist.includes(origin) || !origin) {
@@ -19,7 +19,9 @@ const options = {
     }
   }
 }
-app.use(cors(options));
+//back de como estaba cors: app.use(cors(options));
+app.use(cors(options)); //esto habilita cors para todas las solicitudes
+
 
 app.get('/', (req, res) => {
   res.send('Hola mi server en express');
@@ -36,7 +38,7 @@ app.use(ormErrorHandler);
 app.use(boomErrorHandler);
 app.use(errorHandler);
 
-
+//Puerto en el que corre el servidor
 app.listen(port, () => {
   console.log('Mi puerto warehouse-pdv-copi1 es el ' +  port);
 });

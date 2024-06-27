@@ -134,15 +134,13 @@ class Producto extends Model {
       as: 'rprodtran'
     });
 
-    //relacion mucho a muchos con venta intermedio detalleventa
+    // esta relacion mucho a muchos con venta intermedio detalleventa no esta afectando si lo pongo o no
     // Producto.belongsToMany(models.Venta, {
     //   through: models.Detalleventa,
     //   foreignKey: 'producto_id',
     //   otherKey: 'venta_id',
-    //   as: 'rprodvent',
+    //   as: 'rmtmprodvent',
     // });
-
-    // Producto.belongsToMany(models.Venta, { through: models.Detalleventa });
   }
 
   static config(sequelize){
